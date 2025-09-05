@@ -1,0 +1,1 @@
+These are my projects with C. They include some code that could be used malicously. Although they should be harmless (because I'm not a good programmer), anyone using the code (which will be barely anyone) should not use it for malicious purposes.
