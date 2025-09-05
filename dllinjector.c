@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <tlhelp32.h>
 
+// -------------------------DLL INJECTOR ------------------------
 
 int main(void){
     //printf("\033[1;32m(+) Starting DLL Injector\033[0m\n");
@@ -41,7 +42,7 @@ int main(void){
             //printf("\033[1;32m(+) Opened target process\033[0m\n");
 
             //write path to allocated memory
-            char path[] = "C:\\Users\\brian\\Desktop\\c\\DLLinjector\\injection.dll";
+            char path[] = "PATH TO DLL";
 
             //printf("\033[1;32m(+) Allocating memory in target process\033[0m\n");
 
@@ -90,4 +91,5 @@ int main(void){
 
     CloseHandle(Snapshot);
     return 0;
+
 }
