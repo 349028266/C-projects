@@ -59,7 +59,7 @@ int main() {
 			//--------------------------------------------------------------------
 			//----------------------------------------------------------------------
 			// Allocate memory in the target process
-				LPVOID * memory = VirtualAllocEx(Process, NULL, sizeof(shellcode)+1, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+				LPVOID memory = VirtualAllocEx(Process, NULL, sizeof(shellcode)+1, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
 				if(memory==NULL){
 					//printf("(-) Memory allocation failed: %lu \n", GetLastError());
 				}
@@ -80,7 +80,7 @@ int main() {
 			WaitForSingleObject(RemoteThread,INFINITE);
 
 			//printf("(-) Thread has successfully executed \n");
-			VirtualFreeEx(memory,0,MEM_RELEASE);
+			VirtualFreeEx(Process, memory, 0,MEM_RELEASE);
 
 			//printf("(-) Thread has been terminated \n");
 
